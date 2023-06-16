@@ -1,3 +1,5 @@
+# 100문제 중 42 
+
 # 배열 두배만들기
 def solution(numbers):
             answer = []
@@ -28,31 +30,6 @@ def solution(array):
 # print(solution([10, 29]))
 # print(solution([77777, 37971]))
 
-
-
-# 영어가 싫어요
-e_dict = {
-    'zero': 0,
-    'one': 1,
-    'two': 2,
-    'three': 3,
-    'four': 4,
-    'five': 5,
-    'six': 6,
-    'seven': 7,
-    'eight': 8,
-    'nine': 9,
-}
-
-def solution(numbers):
-    answer = 0
-    
-    str(numbers).replace('one','1',-1)
-    numbers.replace('two','2')
-    print(numbers)
-    return answer
-print(solution("onetwothreefourfivesixseveneightnine"))
-print(solution("onefourzerosixseven"))
 
 # 대소문자 바꿔서 출력하기
 str1 = 'aBcDeFg'
@@ -573,3 +550,47 @@ print(solution("nice to meet you")) # "nc t mt y"
 # 다른 사람 코드 
 def solution(my_string):
     return "".join([i for i in my_string if not(i in "aeiou")])
+
+# 영어가 싫어요 
+e_dict = {
+    'zero': 0,
+    'one': 1,
+    'two': 2,
+    'three': 3,
+    'four': 4,
+    'five': 5,
+    'six': 6,
+    'seven': 7,
+    'eight': 8,
+    'nine': 9,
+}
+# 선언해놓고 쓸줄 몰라서 보류
+
+def solution(numbers):
+    numbers = numbers.replace('one','1')
+    numbers = numbers.replace('two','2')
+    numbers = numbers.replace('three','3')
+    numbers = numbers.replace('four','4')
+    numbers = numbers.replace('five','5')
+    numbers = numbers.replace('six','6')
+    numbers = numbers.replace('seven','7')
+    numbers = numbers.replace('eight','8')
+    numbers = numbers.replace('nine','9')
+    numbers = numbers.replace('zero','0')
+    return int(numbers)
+print(solution("onetwothreefourfivesixseveneightnine"))
+print(solution("onefourzerosixsevenone"))
+
+# 다른사람 코드 1
+def solution(numbers):
+    for num, eng in enumerate(["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]):
+        numbers = numbers.replace(eng, str(num))
+    return int(numbers)
+# 다른사람 코드 2
+def solution(numbers):
+    dic = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    i=0
+    for word in dic:
+        numbers = numbers.replace(word, str(i))
+        i+=1
+    return int(numbers)
