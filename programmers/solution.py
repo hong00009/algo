@@ -569,3 +569,7 @@ def solution(my_string):
     my_string = my_string.replace('o','')
     return my_string
 print(solution("nice to meet you")) # "nc t mt y"
+
+# 다른 사람 코드 
+def solution(my_string):
+    return "".join([i for i in my_string if not(i in "aeiou")])
