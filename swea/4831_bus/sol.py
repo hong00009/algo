@@ -20,7 +20,7 @@ sys.stdin = open('input.txt')
 T = int(input()) # 3
 
 for tc in range(1, T+1):
-    list_R = list(map(int, (input().split()))) # 3. 10. 5
+    list_R = list(map(int, (input().split()))) # 3, 10, 5
 
     recharge_center = list(map(int, input().split()))
     result = 0 
@@ -29,28 +29,7 @@ for tc in range(1, T+1):
     K = list_R[0]
     N = list_R[1]
     M = list_R[2]
-    able_k = K
 
-    for i in range(0, N):
-        # print('i // ', i)
-        here += 1
-        # print('here',here)
+    # 다시 풀어보기
 
-        for a in range(0,M):
-            if recharge_center[a] == here:
-                print('내위치', here)
-                print('충전소위치', recharge_center[a])
-                able_k += K
-                print('남은이동 K',able_k)
-                result += 1
-                print('충전', result)
-                able_k -= 1
-
-                if able_k > 0:
-                    print('최종남은이동K1',able_k)
-                    continue 
-                else:
-                    break
-        print('최종남은이동K2',able_k)
-        
     print(f'#{tc} {result} \n')
