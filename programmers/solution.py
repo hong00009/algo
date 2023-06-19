@@ -594,3 +594,17 @@ def solution(numbers):
         numbers = numbers.replace(word, str(i))
         i+=1
     return int(numbers)
+
+# 분수의 덧셈
+def solution(numer1, denom1, numer2, denom2):
+    answer = []
+    M = denom1 * denom2
+    S = numer1 * denom2 + numer2 * denom1
+    for i in range(999, 1 ,-1): # 약분
+        if (S % i == 0) and (M % i == 0):
+            S = int(S/i)
+            M = int(M/i)
+        answer = [S, M]
+    return answer
+print(solution(1,2,3,4))
+
