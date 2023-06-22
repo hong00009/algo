@@ -9,7 +9,7 @@ for tc in range(1, T+1):
     arr = []
     for i in range(100):
         arr.append(list(map(int, input().split())))
-        # 100줄 읽어오기
+        # 100줄 읽어오기★★
     
     sum_a = []
     sum_b = []
