@@ -608,3 +608,38 @@ def solution(numer1, denom1, numer2, denom2):
     return answer
 print(solution(1,2,3,4))
 
+# n보다 커질 때까지 더하기
+def solution(numbers, n):
+    answer = 0
+    for i in numbers:
+        if answer <= n:
+            answer += i
+
+    return answer
+print(solution([34, 5, 71, 29, 100, 34], 123)) # 139
+print(solution([58, 44, 27, 10, 100], 139)) # 239
+
+
+# 조건에 맞게 수열 변환하기 3
+
+def solution(arr, k):
+    if k % 2 :
+        for i in range(len(arr)):
+            arr[i] *=k
+    else:
+        for i in range(len(arr)):
+            arr[i] +=k
+    return arr
+print(solution([1, 2, 3, 100, 99, 98], 3)) # [3, 6, 9, 300, 297, 294]
+print(solution([1, 2, 3, 100, 99, 98], 2)) # [3, 4, 5, 102, 101, 100]
+
+# 다른사람 코드1
+def solution(arr, k):
+    return [i*k if k%2!=0 else i+k for i in arr]
+
+# 다른사람 코드2
+def solution(arr, k):
+    if k % 2 != 0:
+        return list(map(lambda x: x * k, arr))
+
+    return list(map(lambda x: x + k, arr))
